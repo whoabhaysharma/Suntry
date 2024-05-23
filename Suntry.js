@@ -8,7 +8,7 @@ class Suntry {
       Object.keys(compilation.assets).forEach((assetName) => {
         if (assetName.endsWith('.js')) {
           let source = compilation.assets[assetName].source();
-          const { catchFunction } = this.options;
+          const { catchFunction = () => {} } = this.options;
 
           source = `
             (function() {
